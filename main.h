@@ -22,7 +22,7 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
-char *binary(char *bin, long int int_in, int isneg, int limit);
+int print_bnr(va_list arguments, char *buf, unsigned int ibuf)
 
 int print_char(va_list args);
 int print_digit(va_list args);

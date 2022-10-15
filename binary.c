@@ -1,37 +1,42 @@
 #include "main.h"
 
 /**
- * binary - prints decimal in binary
- * @bin: pointer to bin
- * @int_in: input number
- * @isneg: if input number is negative
- * @limit: size of the binary
+ * print_bnr - prints decimal in binary
+ * @arguments: input string
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
  * Return: number of chars printed.
  */
-char *binary(char *bin, long int int_in, int isneg, int limit)
+int print_bnr(va_list arguments, char *buf, unsigned int ibuf)
 {
-	int i;
+	int int_input, count, i, first_one, isnegative;
+	char *binary;
 
-	for (i = 0; i < limit; i++)
-		bin[i] = '0';
-	bin[limit] = '\0';
-	for (i = limit - 1; int_in > 1; i--)
+	int_input = va_arg(arguments, int);
+	isnegative = 0;
+	if (int_input == 0)
 	{
-		if (int_in == 2)
-			bin[i] = '0';
-		else
-			bin[i] = (int_in % 2) + '0';
-		int_in /= 2;
+		ibuf = handl_buf(buf, '0', ibuf);
+		return (1);
 	}
-	if (int_in != 0)
-		bin[i] = '1';
-	if (isneg)
+	if (int_input < 0)
 	{
-		for (i = 0; bin[i]; i++)
-			if (bin[i] == '0')
-				bin[i] = '1';
-			else
-				bin[i] = '0';
+		int_input = (int_input * -1) - 1;
+		isnegative = 1;
 	}
-	return (bin);
+	binary = malloc(sizeof(char) * (32 + 1));
+	binary = fill_binary_array(binary, int_input, isnegative, 32);
+	first_one = 0;
+	for (count = i = 0; binary[i]; i++)
+	{
+		if (first_one == 0 && binary[i] == '1')
+			first_one = 1;
+		if (first_one == 1)
+		{
+			ibuf = handl_buf(buf, binary[i], ibuf);
+			count++;
+		}
+	}
+	free(binary);
+	return (count);
 }

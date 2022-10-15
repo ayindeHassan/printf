@@ -1,3 +1,4 @@
+
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -6,7 +7,7 @@
 #include <stdarg.h>
 
 /**
- * struct format - Struct for format
+ * struct specifiers - Define a new struct of specifiers
  * @specifiers: Struct format
  * @f: The function associated
  */

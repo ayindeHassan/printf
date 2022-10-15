@@ -17,7 +17,8 @@ int get_function(char con_spec, va_list args)
 	specifiers_t spec[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'%', print_mod}
+		{'%', print_mod},
+		{0, NULL}
 	};
 
 	while (spec[i].specifiers)

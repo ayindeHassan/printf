@@ -1,6 +1,6 @@
 #include "main.h"
 #include <unistd.h>
-
+#include <stdarg.h>
 /**
  * print_char - print char
  *

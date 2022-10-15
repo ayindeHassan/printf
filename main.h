@@ -6,19 +6,24 @@
 #include <stdlib.h>
 
 /**
- * struct structprint - structure containing
- * @q: the location and method to translate data to characters.
- * @u: print function for specific type.
- *
- * Return: int
+ * struct format - Struct for format
+ * @specifiers: Struct format
+ * @f: The function associated
  */
-typedef struct structprint
-{
-	char *q;
-	int (*u)(char *format, va_list);
-} structype;
 
-int _putchar(char ch);
+typedef struct specifiers
+{
+	char specifiers;
+	int (*f)(va_list);
+} specifiers_t;
+
+/*prototypes*/
 int _printf(const char *format, ...);
+int get_function(char s, va_list args);
+int _putchar(char c);
+
+int print_char(va_list args);
+int print_string(va_list args);
+int print_mod(va_list args);
 
 #endif

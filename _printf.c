@@ -1,52 +1,50 @@
 #include "main.h"
-
+#include <unistd.h>
 /**
- * _printf - prints formatted data to stdout
- * @format: string that contains the format to print
- * Return: number of characters written
+ * _printf - Emulate the original.
+ *
+ * @format: Format by specifier.
+ *
+ * Return: count of chars.
  */
-
-int _printf(char *format, ...)
+int _printf(const char *format, ...)
 {
-	int written = 0;
-    int (*structype)(char *, va_list);
-	char q[3];
-	va_list pa;
+	int i = 0;
+	int count = 0;
 
-	if (format == NULL)
+	int count_fun;
+	va_list args;
+	va_start(args, format);
+	
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	q[2] = '\0';
-	va_start(pa, format);
-	_putchar(-1);
-	while (format[0])
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	while (format[i])
 	{
-		if (format[0] == '%')
+		count_fun = 0;
+		if (format[i] == '%')
 		{
-			structype = driver(format);
-			if (structype)
+			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
 			{
-				q[0] = '%';
-				q[1] = format[1];
-				written += structype(q, pa);
-			}
-			else if (format[1] != '\0')
-			{
-				written += _putchar('%');
-				written += _putchar(format[1]);
-			}
-			else
-			{
-				written += _putchar('%');
+				count = -1;
 				break;
 			}
-			format += 2;
+			count_fun += get_function(format[i + 1], args);
+			if (count_fun == 0)
+				count += _putchar(format[i + 1]);
+			if (count_fun == -1)
+				count = -1;
+			i++;
 		}
 		else
 		{
-			written += _putchar(format[0]);
-			format++;
+			(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
 		}
+		i++;
+		if (count != -1)
+			count += count_fun;
 	}
-	_putchar(-2);
-	return (written);
+	va_end(args);
+	return (count);
 }

@@ -22,6 +22,7 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
+int print_buf(char *buf, unsigned int nbuf)
 char *binary(char *bin, long int int_in, int isneg, int limit)
 int print_buf(char *buf, unsigned int nbuf)
 unsigned int handl_buf(char *buf, char c, unsigned int ibuf)

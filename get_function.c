@@ -20,7 +20,7 @@ int get_function(char con_spec, va_list args)
 		{'%', print_mod},
         {'d', print_digit},
 		{'i', print_digit},
-		{'b', print_binary},
+        {'b', print_binary},
 		{0, NULL}
 	};
 

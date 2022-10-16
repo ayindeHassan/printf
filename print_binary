@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * binary - print a binary number
@@ -8,6 +8,7 @@
  *
  * Return: no return
  */
+
 int print_binary(va_list args)
 {
 	unsigned int c;
@@ -15,7 +16,7 @@ int print_binary(va_list args)
     int j;
 	int arr[100];
 
-	c = va_arg(args, int);
+	c = va_arg(args, unsigned int);
 	i = 0;
 	if (c == 0)
 	{
@@ -30,5 +31,6 @@ int print_binary(va_list args)
 	}
 	for (j = i - 1; j >= 0; j--)
 		_putchar(arr[j] + '0');
+
 	return (i);
 }

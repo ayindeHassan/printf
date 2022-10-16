@@ -18,7 +18,7 @@ int get_function(char con_spec, va_list args)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_mod},
-        	{'d', print_digit},
+        {'d', print_digit},
 		{'i', print_digit},
 		{'b', print_binary},
 		{0, NULL}

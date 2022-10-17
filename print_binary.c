@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /**
- * binary - print a binary number
+ * print_binary - print a binary number
  *@args:unsigned integer input
  *
  * Return: no return

@@ -27,5 +27,6 @@ int print_hex(va_list args)
         decimal = decimal / 16;
         i++;
     }
+    while(i--)
     return (0);
 }

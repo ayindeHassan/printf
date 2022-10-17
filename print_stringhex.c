@@ -2,8 +2,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- *stringhexa - Entry point
- *@args: argument tipo char * we want to change
+ *print_stringHex - Entry point
+ *@args: argument  char * we want to change
  *Return: no return
  */
 int print_stringHex(va_list args)

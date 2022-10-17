@@ -18,12 +18,13 @@ int print_octal(va_list args)
 
 	c = va_arg(args, unsigned int);
 	i = 0;
+
 	if (c == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	while (c > 0)
+	while (c != 0)
 	{
 		arr[i] = c % 8;
 		c = c / 8;

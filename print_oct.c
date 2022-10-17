@@ -3,8 +3,8 @@
 #include <unistd.h>
 
 /**
- * octal - print an octal number
- *@args:unsigned integer input
+ * print_octal - print an octal number
+ *@args: unsigned integer input
  *
  * Return: no return
  */

@@ -22,6 +22,7 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
+int print_specialHex(unsigned int c);
 
 
 
@@ -34,5 +35,6 @@ int print_octal(va_list args);
 int print_hex(va_list args);
 int print_hexUpper(va_list args);
 int print_unsigned(va_list args);
+int print_stringHex(va_list args);
 
 #endif

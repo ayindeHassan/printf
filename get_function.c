@@ -21,8 +21,8 @@ int get_function(char con_spec, va_list args)
         {'d', print_digit},
 		{'i', print_digit},
         {'b', print_binary},
-		{'o', print_octal},
-		{'X', print_hex},
+		/* {'o', print_octal},
+		{'X', print_hex}, */
 		{0, NULL}
 	};
 

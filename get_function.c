@@ -24,6 +24,7 @@ int get_function(char con_spec, va_list args)
 		{'o', print_octal},
 		{'x', print_hex},
 		{'X', print_hexUpper},
+		{'u', print_unsigned},
 		{0, NULL}
 	};
 

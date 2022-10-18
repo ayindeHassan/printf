@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdarg.h>
+#include <unistd.h>
 
 /**
 *print_rot - Print a string in rot13

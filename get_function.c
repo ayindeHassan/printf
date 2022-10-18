@@ -28,6 +28,7 @@ int get_function(char con_spec, va_list args)
 		{'S', print_stringHex},
 		{'p', print_pointer},
 		{'r', print_revString},
+		{'R', print_rot},
 		{0, NULL}
 	};
 

@@ -1,6 +1,6 @@
 #include "main.h"
-/* #include <stdarg.h>
-#include <unistd.h> */
+#include <stdarg.h>
+#include <unistd.h>
 /**
  * print_revString - Entry point
  * @args: pointer the string we want to reverse and print

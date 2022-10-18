@@ -26,6 +26,7 @@ int get_function(char con_spec, va_list args)
 		{'X', print_hexUpper},
 		{'u', print_unsigned},
 		{'S', print_stringHex},
+		{'p', print_pointer},
 		{0, NULL}
 	};
 

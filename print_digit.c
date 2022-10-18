@@ -37,6 +37,6 @@ int print_digit(va_list args)
 		count_fun += _putchar(((digit / decimal) % 10) + '0');
 		decimal /= 10;
 	}
-
+	
 	return (count_fun);
 }

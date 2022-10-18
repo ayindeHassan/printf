@@ -23,7 +23,7 @@ int _printf(const char *format, ...);
 int get_function(char s, va_list args);
 int _putchar(char c);
 int print_specialHex(unsigned int c);
-
+int hex_pointer(unsigned long int c);
 
 
 int print_char(va_list args);
@@ -36,5 +36,6 @@ int print_hex(va_list args);
 int print_hexUpper(va_list args);
 int print_unsigned(va_list args);
 int print_stringHex(va_list args);
+int print_pointer(va_list args);
 
 #endif

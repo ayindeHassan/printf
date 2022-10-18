@@ -45,5 +45,6 @@ int print_hexUpper(va_list args);
 int print_unsigned(va_list args);
 int print_stringHex(va_list args);
 int print_pointer(va_list args);
+int print_revString(va_list args);
 
 #endif

@@ -27,6 +27,7 @@ int get_function(char con_spec, va_list args)
 		{'u', print_unsigned},
 		{'S', print_stringHex},
 		{'p', print_pointer},
+		{'r', print_revString},
 		{0, NULL}
 	};
 

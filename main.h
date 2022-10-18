@@ -25,6 +25,8 @@ int _putchar(char c);
 int print_specialHex(unsigned int c);
 int hex_pointer(unsigned long int c);
 int get_flags(const char *format, int *i);
+char *malloc_str(char *str);
+char *rot13(char *p);
 
 /* FLAGS */
 #define F_MINUS 1
@@ -46,5 +48,6 @@ int print_unsigned(va_list args);
 int print_stringHex(va_list args);
 int print_pointer(va_list args);
 int print_revString(va_list args);
+int print_rot(va_list args);
 
 #endif

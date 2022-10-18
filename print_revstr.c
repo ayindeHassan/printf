@@ -9,23 +9,20 @@
  */
 int print_revString(va_list args)
 {
-	int i, j;
-	char *s;
-	char n[] = "(null)";
+	int count_fun = 0, i = 0;
+	char *s = va_arg(args, char *);
 
-
-	s = va_arg(args, char *);
-	i = 0;
-	if (s == NULL)
+	if (!s)
+		s = "(null)";
+	while (s[i])
 	{
-		for (i = 0; n[i] != '\0'; i++)
-			_putchar(n[i]);
-		return (6);
+		i++;
 	}
-	j = 0;
-	while (s[j] != '\0')
-		j++;
-	for (i = j - 1; i >= 0; i--)
-		_putchar (s[i]);
-	return (j);
+	while (i >= 0)
+	{
+		count_fun += _putchar(s[i]);
+		i--;
+	}
+	count_fun--;
+	return (count_fun);
 }

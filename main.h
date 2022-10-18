@@ -24,6 +24,7 @@ int get_function(char s, va_list args);
 int _putchar(char c);
 int print_specialHex(unsigned int c);
 int hex_pointer(unsigned long int c);
+int get_flags(const char *format, int *i);
 
 
 int print_char(va_list args);

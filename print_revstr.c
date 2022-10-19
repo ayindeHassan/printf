@@ -1,28 +1,30 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
+
 /**
- * print_revString - Entry point
+ * print_rev - Entry point
  * @args: pointer the string we want to reverse and print
  *
  * Return: no return
  */
-int print_revString(va_list args)
+int print_rev(va_list args)
 {
-	int count_fun = 0, i = 0;
-	char *s = va_arg(args, char *);
+	int i, j;
+	char *s;
+	char n[] = "(null)";
 
-	if (!s)
-		s = "(null)";
-	while (s[i])
+
+	s = va_arg(args, char *);
+	i = 0;
+	if (s == NULL)
 	{
-		i++;
+		for (i = 0; n[i] != '\0'; i++)
+			_putchar(n[i]);
+		return (6);
 	}
-	while (i >= 0)
-	{
-		count_fun += _putchar(s[i]);
-		i--;
-	}
-	count_fun--;
-	return (count_fun);
+	j = 0;
+	while (s[j] != '\0')
+		j++;
+	for (i = j - 1; i >= 0; i--)
+		_putchar (s[i]);
+	return (j);
 }
